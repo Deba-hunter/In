@@ -38,5 +38,5 @@ def index():
 
         return "✅ Messages sent!"
 
-    return render_template('index.html')
+    return render_template('form.html')
     

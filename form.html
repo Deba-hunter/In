@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Auto Message Sender</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #3897f0;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+      border: none;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Instagram Auto Message Sender</h2>
+  <form action="/" method="POST" enctype="multipart/form-data">
+    <label for="insta_username">Instagram Username:</label>
+    <input type="text" name="insta_username" required>
+
+    <label for="insta_password">Instagram Password:</label>
+    <input type="password" name="insta_password" required>
+
+    <label for="usernames">Upload Usernames (.txt):</label>
+    <input type="file" name="usernames" accept=".txt" required>
+
+    <label for="message">Upload Message (.txt):</label>
+    <input type="file" name="message" accept=".txt" required>
+
+    <label for="delay">Delay between messages (in seconds):</label>
+    <input type="number" name="delay" value="10" min="1" required>
+
+    <input type="submit" value="Send Messages">
+  </form>
+
+</body>
+</html>
