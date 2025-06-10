@@ -1,15 +1,37 @@
-import Flask
+python
 from flask import Flask, request, render_template
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import tempfile
 import time
 
-app = Flask(__name__)
+app = Flask(_name_)
+
+@app.route('/')
+def index():
+    return '''
+    <form method="POST" action="/send_message">
+        Username: <input type="text" name="user"><br>
+        Message: <input type="text" name="message"><br>
+        Delay (seconds): <input type="number" name="delay" value="0"><br>
+        <input type="submit" value="Send Message">
+    </form>
+    '''
+
+@app.route('/send_message', methods=['POST'])
+def send_message():
+    user = request.form.get('user')
+    message = request.form.get('message')
+    delay = int(request.form.get('delay', 0))
+
+    time.sleep(delay)
+
+    # Yahan actual message bhejne ka logic daalna hoga
+    print(f"Message to {user}: {message}")
+
+    return f"Message sent to {user} after {delay} seconds!"
+
+if _name_ == '_main_':
+    app.run(debug=True)
+
+ 
 
 
 def create_driver() -> webdriver.Chrome:
